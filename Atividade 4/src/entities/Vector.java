@@ -126,7 +126,6 @@ public class Vector implements VectorInterface {
 
     /**
      * Returns the number of objects in this vector.
-     * 
      * @return the number of objects
      */
     public int size() {
