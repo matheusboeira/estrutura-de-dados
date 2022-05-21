@@ -62,7 +62,7 @@ public class Student {
      * @param grade to set
      */
     public void setGrade(double grade) {
-        if (grade >= 0 && grade <= 10) {
+        if (grade >= 0.0 && grade <= 10.0) {
             this.grade = grade;
         }
     }
