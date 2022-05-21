@@ -35,6 +35,13 @@ public class Vector implements VectorInterface {
         return false;
     }
 
+    /**
+     * Get the object in the given index passed.
+     * 
+     * @param index the position in the vector
+     * @return the object in the position
+     * @throws IllegalArgumentException if the index is out of bounds
+     */
     public Object get(int index) {
         if (index > 0 && index < objects.length) {
             return objects[index];
