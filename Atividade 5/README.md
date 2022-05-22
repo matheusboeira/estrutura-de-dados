@@ -7,13 +7,13 @@ Desta forma, este exercício suporta o uso do tipo `Object` ou apenas aceitando 
 ### Exemplo:
 
 ```java
-    LinkedList<Object> list = new LinkeedList<>();
+    LinkedList<Object> list = new LinkedList<>();
 ```
 
 aceitando todos os tipos de dados, ou
 
 ```java
-    LinkedList<String> list = new LinkeedList<>();
+    LinkedList<String> list = new LinkedList<>();
 ```
 
 assim, aceitando apenas `Strings`.
