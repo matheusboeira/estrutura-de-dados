@@ -1,18 +1,19 @@
-## Getting Started
+## Atividade 5
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este exercício propõe a implementação da `Lista Simplesmente Encadeada (LSE, onde chamei de LinkedList)`. O objetivo era transformar o proposto em sala de aula de forma mais genérica, utilizando o tipo `Object`. Porém, resolvi transformar ela realmente genérica, utilizando os _Generics_ do Java. 
 
-## Folder Structure
+Desta forma, este exercício suporta o uso do tipo `Object` ou apenas aceitando apenas um tipo.
 
-The workspace contains two folders by default, where:
+### Exemplo:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+```java
+    LinkedList<Object> list = new LinkeedList<>();
+```
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+aceitando todos os tipos de dados, ou
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+```java
+    LinkedList<String> list = new LinkeedList<>();
+```
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+assim, aceitando apenas `Strings`.
