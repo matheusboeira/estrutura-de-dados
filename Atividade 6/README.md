@@ -1,6 +1,6 @@
 ## Atividade 6
 
-Este exercício propõ a implementação da `Lista Duplamente Encadeada (LDE, onde chamei de DoublyLinkedList)`. O objetivo era transformar a Lista desenvolvida em sala de aula numa lista mais genérica, utilizando a classe `Object`. Porém, da mesma forma do exercício passado, resolvi utilizar do recurso de _Generics_ da linguagem.
+Este exercício propõe a implementação da `Lista Duplamente Encadeada (LDE, onde chamei de DoublyLinkedList)`. O objetivo era transformar a Lista desenvolvida em sala de aula numa lista mais genérica, utilizando a classe `Object`. Porém, da mesma forma do exercício passado, resolvi utilizar do recurso de _Generics_ da linguagem.
 
 De tal forma, os exercícios do slide podem ser solucionados da seguinte forma:
 
