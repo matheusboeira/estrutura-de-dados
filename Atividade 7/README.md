@@ -1,6 +1,6 @@
 ## Atividade 7
 
-Este exercício propõe a implementação de dois métodos, um de maneira `recursiva` e outro de maneira `iterativa`, para encontrar o maior número entre eles. Com isso, deve-se computar o tempo de execução de cada método.
+Este exercício propõe a implementação de dois métodos, um de maneira `recursiva` e outro de maneira `iterativa`, para encontrar o maior número de um vetor de inteiros. Além disso, deve-se computar o tempo de execução de cada método.
 
 O enunciado dizia, também, que deveria ser computado a busca do maior valor em um TAD vetor de 1000 posições. Porém, na minha máquina, só pude perceber a diferença de tempo a partir de `100.000.000` de elementos.
 
@@ -8,7 +8,7 @@ O enunciado dizia, também, que deveria ser computado a busca do maior valor em 
 var vector = new Vector<Integer>(100_000_000);
 ```
 
-Vale ressaltar que os elemento estão sendo gerados de maneira aleatória.
+Vale ressaltar que os elementos estão sendo gerados de maneira aleatória.
 
 ```java
 Random random = new Random();
