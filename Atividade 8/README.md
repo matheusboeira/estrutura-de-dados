@@ -18,7 +18,10 @@ for (int i = 0; i < vector.size(); i++) {
 
 ## Resultado dos testes
 
-Para fins de comparação, foi necessário criar outro método para fins de comparação, uma vez que em ambos os casos, não houve diferenças significativas. Além disso, os resultados estão em milissegundos e nanossegundos.
+Para fins de comparação, foi necessário criar outro método, uma vez que em ambos os casos, não houve diferenças significativas. Além disso, os resultados estão em milissegundos e nanossegundos.
 
-### :clock4: Recursivo vs. Iterativo vs. Linear
+### :clock4: Recursivo vs. Iterativo
+
+![image](https://user-images.githubusercontent.com/76896958/174507616-6d0b530c-87bd-4279-874f-aa6731212ae5.png)
+
 
