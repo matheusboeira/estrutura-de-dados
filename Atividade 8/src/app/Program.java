@@ -38,24 +38,24 @@ public class Program {
             Duration iterative = Duration.between(startIterative, endIterative);
             Duration linearSearch = Duration.between(startLinear, endLinear);
 
-            App.println(Color.PURPLE, "[TEMPO LEVADO]");
+            App.println(Color.PURPLE, "\n[TEMPO LEVADO]");
             App.println(Color.BLUE, "   Método recursivo (busca binária): ");
             App.printf(Color.YELLOW, "      Milissegundos: ");
             App.printf(Color.GREEN, (recursive.getNano() / 10e6) + " ms.\n");
             App.printf(Color.YELLOW, "      Nanossegundos: ");
-            App.printf(Color.GREEN, (recursive.getNano()) + " ms.\n");
+            App.printf(Color.GREEN, (recursive.getNano()) + " ns.\n");
 
             App.println(Color.BLUE, "   Método iterativo (busca binária): ");
             App.printf(Color.YELLOW, "      Milissegundos: ");
             App.printf(Color.GREEN, (iterative.getNano() / 10e6) + " ms.\n");
             App.printf(Color.YELLOW, "      Nanossegundos: ");
-            App.printf(Color.GREEN, (iterative.getNano()) + " ms.\n");
+            App.printf(Color.GREEN, (iterative.getNano()) + " ns.\n");
 
             App.println(Color.BLUE, "   Método iterativo (busca linear): ");
             App.printf(Color.YELLOW, "      Milissegundos: ");
             App.printf(Color.GREEN, (linearSearch.getNano() / 10e6) + " ms.\n");
             App.printf(Color.YELLOW, "      Nanossegundos: ");
-            App.printf(Color.GREEN, (linearSearch.getNano()) + " ms.\n");
+            App.printf(Color.GREEN, (linearSearch.getNano()) + " ns.\n\n");
         } catch (Exception e) {
             out.println(e.getMessage());
         }
