@@ -4,4 +4,5 @@ Este exercício propõe a implementação de uma ```fila (queue)``` para solucio
 
 ## Demonstração
 
-[ADICIONAR_VIDEO_AQUI]
+<div align="center">
+<img src="https://user-images.githubusercontent.com/76896958/175483954-99cd37b7-8d43-4619-9685-8bc61defbbc7.gif">
