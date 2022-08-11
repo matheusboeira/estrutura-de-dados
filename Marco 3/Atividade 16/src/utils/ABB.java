@@ -67,115 +67,6 @@ public class ABB<Type extends Comparable<Type>> {
         }
     }
 
-    public boolean remove(Type value) {
-        NodeTree<Type> current = this.root;
-        NodeTree<Type> currentParent = null;
-
-        while(current != null) {
-            if (current.getValue().equals(value)) {
-                break;                
-            } else if (value.compareTo(current.getValue()) == -1) { 
-                /**
-                 * Valor procurado é menor que o atual.
-                 */
-                currentParent = current;
-                current = current.getLeft();
-            } else {
-                currentParent = current;
-                current = current.getRight();
-            }
-        }
-
-        /**
-         * Verifica se existe o elemento.
-         */
-        if (current != null) {
-            if (current.getRight() != null){
-                NodeTree<Type> substitute = current.getRight();
-                NodeTree<Type> parentSubstitute = current;
-
-                while(substitute.getLeft() != null){
-                    parentSubstitute = substitute;
-                    substitute = substitute.getLeft();
-                }
-                substitute.setLeft(current.getLeft());
-
-                if (currentParent != null) {
-                    if (current.getValue().compareTo(currentParent.getValue()) == -1) {
-                        currentParent.setLeft(substitute);
-                    }else {
-                        currentParent.setRight(substitute);
-                    }
-                /**
-                 * Se não tem pai atual, então é a raiz.
-                 */
-                } else {
-                    this.root = substitute;
-                    parentSubstitute.setLeft(null);
-                    this.root.setRight(parentSubstitute);
-                    this.root.setLeft(current.getLeft());
-                }
-                
-                /**
-                 * Removeu o elemento da árvore.
-                 */
-                if (substitute.getValue().compareTo(parentSubstitute.getValue()) == -1) {
-                    parentSubstitute.setLeft(null);
-                } else {
-                    parentSubstitute.setRight(null);
-                }
-            } else if (current.getLeft() != null) {
-                /**
-                 * Tem filho apenas à esquerda.
-                 */
-                NodeTree<Type> substitute = current.getLeft();
-                NodeTree<Type> parentSubstitute = current;
-
-                while(substitute.getRight() != null) {
-                    parentSubstitute = substitute;
-                    substitute = substitute.getRight();
-                }
-
-                if (currentParent != null) {
-                    if (current.getValue().compareTo(currentParent.getValue()) == -1) { //current < currentParent
-                        currentParent.setLeft(substitute);
-                    } else {
-                        currentParent.setRight(substitute);
-                    }
-                } else {
-                    this.root = substitute;
-                }
-                
-                /**
-                 * Removeu o elemento da árvore.
-                 */
-                if (substitute.getValue().compareTo(parentSubstitute.getValue()) == -1) {
-                    parentSubstitute.setLeft(null);
-                } else {
-                    parentSubstitute.setRight(null);
-                }
-            } else {
-                /**
-                 * Não tem filho.
-                 */
-                if (currentParent != null) {
-                    if (current.getValue().compareTo(currentParent.getValue()) == -1) { 
-                        currentParent.setLeft(null);
-                    } else {
-                        currentParent.setRight(null);
-                    }
-                } else {
-                    /**
-                     * É a raíz.
-                     */
-                    this.root = null;
-                }
-            }
-            return true;
-        }
-        return false;        
-    }
-
     public String inOrder() {
         var builder = new StringBuilder("[");
         inOrder(this.root, builder);
@@ -187,6 +78,34 @@ public class ABB<Type extends Comparable<Type>> {
             inOrder(node.getLeft(), builder);
             builder.append(node.getValue()).append(", ");
             inOrder(node.getRight(), builder);
+        }
+    }
+
+    public String preOrder() {
+        var builder = new StringBuilder("[");
+        preOrder(this.root, builder);
+        return builder.substring(0, builder.toString().length() - 2) + "]";
+    }
+    
+    private void preOrder(NodeTree<Type> node, StringBuilder builder) {
+        if (node != null) {
+            builder.append(node.getValue()).append(", ");
+            preOrder(node.getLeft(), builder);
+            preOrder(node.getRight(), builder);
+        }
+    }
+
+    public String postOrder() {
+        var builder = new StringBuilder("[");
+        postOrder(this.root, builder);
+        return builder.substring(0, builder.toString().length() - 2) + "]";
+    }
+    
+    private void postOrder(NodeTree<Type> node, StringBuilder builder) {
+        if (node != null) {
+            postOrder(node.getLeft(), builder);
+            postOrder(node.getRight(), builder);
+            builder.append(node.getValue()).append(", ");
         }
     }
 
