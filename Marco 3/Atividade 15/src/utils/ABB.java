@@ -81,6 +81,34 @@ public class ABB<Type extends Comparable<Type>> {
         }
     }
 
+    public String preOrder() {
+        var builder = new StringBuilder("[");
+        preOrder(this.root, builder);
+        return builder.substring(0, builder.toString().length() - 2) + "]";
+    }
+    
+    private void preOrder(NodeTree<Type> node, StringBuilder builder) {
+        if (node != null) {
+            builder.append(node.getValue()).append(", ");
+            preOrder(node.getLeft(), builder);
+            preOrder(node.getRight(), builder);
+        }
+    }
+
+    public String postOrder() {
+        var builder = new StringBuilder("[");
+        postOrder(this.root, builder);
+        return builder.substring(0, builder.toString().length() - 2) + "]";
+    }
+    
+    private void postOrder(NodeTree<Type> node, StringBuilder builder) {
+        if (node != null) {
+            postOrder(node.getLeft(), builder);
+            postOrder(node.getRight(), builder);
+            builder.append(node.getValue()).append(", ");
+        }
+    }
+
     public String toString() {
         return inOrder();
     }
