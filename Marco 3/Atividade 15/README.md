@@ -1,18 +1,19 @@
-## Getting Started
+## Exercício 15
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Neste exercício foi proposto a criação dos métodos de buscar e imprimir os elementos de uma árvore binária de busca. Normalmente, só é solicitado uma criação do tipo genérico utilizando `Object`, porém, eu não consigo me manter nisso e sempre vou para o `Generic` do Java. De tal forma, foi necessário atrelar um tipo específico que contenha o método `compareTo` para que a árvore funcione, uma vez que os elementos serão comparados para serem impressos de forma ordenada. Com isso, inseriu-se o seguinte trecho de código no cabeçalho da ABB:
 
-## Folder Structure
+```java
+    public class ABB<Type extends Comparable<Type>>
+```
 
-The workspace contains two folders by default, where:
+Desta forma, qualquer classe que não implementar o `Comparable`, não poderá ser inserida nesta estrutura. Os testes foram os seguintes:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+```java
+    var abb = new ABB<Integer>();
+    abb.add(4, 5, 6, 1, 2);
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+    System.out.println("Raiz: " + abb.getRoot().getValue());
+    System.out.println("Impressão (em ordem): " + abb);                                 // [1, 2, 4, 5, 6]
+    System.out.println("Resultado da busca: " + abb.search(6));                         // NodeTree [value=6]
+    System.out.println("Resultado da busca (elemento): " + abb.search(6).getValue());   // 6
+```

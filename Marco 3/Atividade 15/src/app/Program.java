@@ -10,5 +10,6 @@ public class Program {
         System.out.println("Raiz: " + abb.getRoot().getValue());
         System.out.println("Impressão (em ordem): " + abb);
         System.out.println("Resultado da busca: " + abb.search(6));
+        System.out.println("Resultado da busca (elemento): " + abb.search(6).getValue());
     }
 }
